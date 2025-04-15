@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer components {
+  .container-wrapper {
+    @apply px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto;
+  }
+}
+html {
+  font-family: 'Manrope', sans-serif;
+}
+.manrope-thin {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 100;
+}
+
+.manrope-normal {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+}
+
+.manrope-bold {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+}
