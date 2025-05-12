@@ -56,7 +56,7 @@ const KPIBox = ({ value, label, theme2, text }) => {
   return (
     <div
       ref={ref}
-      className="md:w-[23%] my-2 md:my-0 rounded-xl px-6 py-4 text-left"
+      className="md:w-[23%] my-2 md:my-0 mx-auto rounded-xl px-6 py-4 text-left"
       style={{ backgroundColor: theme2 }}
     >
       <h3 className="text-4xl manrope-thin" style={{ color: text }}>

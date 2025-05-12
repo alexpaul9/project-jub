@@ -7,8 +7,6 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go"; 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const CustomPrevArrow = (props) => (
   <button

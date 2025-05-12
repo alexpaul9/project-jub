@@ -2,8 +2,11 @@
 
 @layer components {
   .container-wrapper {
-    @apply px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto;
+    @apply px-4 sm:px-6 lg:px-8 mx-auto;
+    max-width: 1700px; /* or any value you prefer */
   }
+  
+  
 }
 html {
   font-family: 'Manrope', sans-serif;

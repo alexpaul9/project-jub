@@ -18,3 +18,35 @@
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
 }
+
+/* VARIABLES */
+/* DOMINOS */
+:root {
+    --dominos-red: #E31837;
+    --dominos-blue1: #006491;
+    --dominos-blue2: #227DDE;
+    --dominos-blue3: #BEE9FA;
+    --dominos-white: #FFF7F7;
+  }
+  
+  /* Backgrounds */
+  .bg-dominos-red    { background-color: var(--dominos-red); }
+  .bg-dominos-blue1  { background-color: var(--dominos-blue1); }
+  .bg-dominos-blue2  { background-color: var(--dominos-blue2); }
+  .bg-dominos-blue3  { background-color: var(--dominos-blue3); }
+  .bg-dominos-white  { background-color: var(--dominos-white); }
+  
+  /* Text colors */
+  .text-dominos-red    { color: var(--dominos-red); }
+  .text-dominos-blue1  { color: var(--dominos-blue1); }
+  .text-dominos-blue2  { color: var(--dominos-blue2); }
+  .text-dominos-blue3  { color: var(--dominos-blue3); }
+  .text-dominos-white  { color: var(--dominos-white); }
+  
+  /* Borders */
+  .border-dominos-red    { border-color: var(--dominos-red); }
+  .border-dominos-blue1  { border-color: var(--dominos-blue1); }
+  .border-dominos-blue2  { border-color: var(--dominos-blue2); }
+  .border-dominos-blue3  { border-color: var(--dominos-blue3); }
+  .border-dominos-white  { border-color: var(--dominos-white); }
+  

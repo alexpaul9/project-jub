@@ -98,9 +98,10 @@ const EventsSection = () => {
 
             {/* Center - Upcoming Events */}
             <Box flex={2}>
-                <Typography variant="h6" mb={2}>
-                    Upcoming Events
-                </Typography>
+                <div></div>
+                <h3 className="text-3xl font-thin">
+                Upcoming Events
+                </h3>
                 <Box
                     sx={{
                         maxHeight: 300,
@@ -155,14 +156,14 @@ const EventsSection = () => {
                         onChange={e => setFilter(e.target.value)}
                         displayEmpty
                         sx={{
-                            backgroundColor: "#60cdf6",
+                            backgroundColor: "#4ac9f6",
                             color: "#0c223b",
-                            borderRadius: "9px",
+                            borderRadius: "15px",
                             fontWeight: 400,
                             fontSize: "1.1rem",
                             px: 2,
-                            py: 1,
-                            minHeight: "40px",                   // Compact height
+                            py: 0,
+                            minHeight: "20px",                   // Compact height
                             alignSelf: "center",                 // Keeps it vertically centered
                             ".MuiOutlinedInput-notchedOutline": { border: "none" },
                             "&.Mui-focused .MuiOutlinedInput-notchedOutline": { border: "none" },

@@ -65,7 +65,7 @@ const AnnualReports = () => {
   };
 
   return (
-    <div className="text-white py-18 px-4 relative">
+    <div className="text-white py-18 relative">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <h2 className="text-3xl md:text-4xl font-light">Integrated Annual Reports</h2>
@@ -74,7 +74,7 @@ const AnnualReports = () => {
         <div className="relative min-w-[140px] z-20">
           <button
             onClick={() => setOpen(!open)}
-            className="bg-[#4ac9f6] text-[#0b3932] font-semibold rounded-full px-6 py-2 flex items-center justify-between w-full shadow-md focus:outline-none transition"
+            className="bg-[#4ac9f6] text-[#0b3932] font-semibold rounded-2xl px-6 py-2 flex items-center justify-between w-full shadow-md focus:outline-none transition"
           >
             {selectedYear === 'All' ? 'Fiscal Year' : `${selectedYear}`}
             <FaChevronDown className={`ml-2 transition-transform ${open ? 'rotate-180' : ''}`} />
@@ -100,7 +100,7 @@ const AnnualReports = () => {
       <Slider {...settings}>
         {filteredReports.map((report, idx) => (
           <div key={idx} className="px-3">
-            <div className="flex bg-[#10314e] rounded-xl overflow-hidden shadow-lg h-full">
+            <div className="flex bg-[#10314e] rounded-2xl overflow-hidden shadow-lg h-full">
               {/* Image */}
               <div className="w-[40%] flex items-center justify-center p-2">
                 <img

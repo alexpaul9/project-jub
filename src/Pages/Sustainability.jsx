@@ -24,7 +24,7 @@ const Sustainability = () => {
         <div>
             <GlobalCover
                 title="Sustainability"
-                image="./sustainability/banner-sus.jpg"
+                video="./Website Final Videos/Sustainability/Sustainability_Banner.webm"
                 subNav={subLinks}
                 theme={"#00332d"}
                 themeLine={"#a3d702"}
