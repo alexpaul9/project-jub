@@ -74,8 +74,8 @@ const Navbar = () => {
         {/* Center Logo */}
         <div className="w-1/4 mx-8 flex justify-center items-center">
           <img
-            // src="./jfl-logo.svg"
-            src="./vite.svg"
+            src="./jfl-logo.svg"
+            // src="./vite.svg"
             alt="Logo"
             className="h-20 object-contain"
           />
