@@ -23,7 +23,7 @@ const Hongs = () => {
                 themeLine={"#EF3F4B"}
             />
             <div className="container-wrapper">
-                <div className="max-w-screen-xl mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-16">
                     <section className="my-16">
                         <div className="mx-auto flex flex-col md:flex-row items-center gap-10">
                             {/* Left Text Area */}
@@ -57,31 +57,33 @@ const Hongs = () => {
                 </div>
             </div>
 
-            <div className="mx-auto mt-16 py-4 bg-[#00B6AD]">
+            <div className='bg-[#00B6AD]'>
                 <div className="container-wrapper">
-                    <div className="max-w-screen-xl flex justify-between items-center gap-6 mx-auto my-16">
-                        <div className='md:w-1/2 mx-auto text-white'>
-                            <h2 className="text-3xl md:text-5xl mb-4 font-light leading-tight">
-                                From One Kitchen <br />
-                                To Many
-                            </h2>
-                            <p className='mb-4 text-2xl text-white'>
-                                What began in 2019 as a single outlet has now grown to 30+ restaurants across North India in just 7 years— a testament to the love for bold, street-style Chinese done right. The pace has been fast, the flavours even faster — and this is just the start.
-                            </p>
+                    <div className="mx-auto max-w-[1350px] mt-16 py-4">
+                        <div className="flex justify-between items-center gap-6 mx-auto my-16">
+                            <div className='md:w-1/2 mx-auto text-white'>
+                                <h2 className="text-3xl md:text-5xl mb-4 font-light leading-tight">
+                                    From One Kitchen <br />
+                                    To Many
+                                </h2>
+                                <p className='mb-4 text-2xl text-white'>
+                                    What began in 2019 as a single outlet has now grown to 30+ restaurants across North India in just 7 years— a testament to the love for bold, street-style Chinese done right. The pace has been fast, the flavours even faster — and this is just the start.
+                                </p>
 
-                        </div>
-                        <div className='md:w-1/2 md:flex justify-center items-center gap-4 mx-auto text-white'>
-                            {/* Image 1 */}
-                            <div className="relative w-full overflow-hidden rounded-2xl">
-                                <img src="./hongs/hongs-featured2.png" className="w-full h-full object-cover" alt="" />
+                            </div>
+                            <div className='md:w-1/2 md:flex justify-center items-center gap-4 mx-auto text-white'>
+                                {/* Image 1 */}
+                                <div className="relative w-full overflow-hidden rounded-2xl">
+                                    <img src="./hongs/hongs-featured2.png" className="w-full h-full object-cover" alt="" />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="mx-auto my-16 py-4">
-                <div className="container-wrapper">
+            <div className="container-wrapper">
+                <div className="mx-auto max-w-[1350px] my-16 py-4">
                     <div className="">
                         <h2 className="text-5xl font-light text-gray-800 mb-10 ">
                             The Hong's Kitchen Difference
@@ -158,7 +160,7 @@ const Hongs = () => {
             </div>
 
             <div className="container-wrapper">
-                <div className="max-w-screen-xl mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-16">
                     <h2 className="text-5xl font-light text-gray-800 mb-10 ">
                         Menu Innovations
                     </h2>
@@ -207,15 +209,17 @@ const Hongs = () => {
                 </div>
             </div>
 
-            <div className="mx-auto my-16 py-4 bg-[#00B6AD]">
+            <div className='bg-[#00B6AD]'>
                 <div className="container-wrapper">
-                    <VideoSlider />
+                    <div className="max-w-[1350px] mx-auto my-16 py-4">
+                        <VideoSlider />
+                    </div>
                 </div>
             </div>
 
-            <div className="mx-auto my-16 py-4">
-                <div className="container-wrapper">
-                <h2 className="text-5xl font-light text-gray-800 mb-10 ">
+            <div className="container-wrapper">
+                <div className="mx-auto max-w-[1350px] my-16 py-4">
+                    <h2 className="text-5xl font-light text-gray-800 mb-10 ">
                         Awards
                     </h2>
                     <div className='md:w-full md:flex justify-center items-center gap-4 mx-auto text-white'>

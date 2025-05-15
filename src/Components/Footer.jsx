@@ -3,67 +3,80 @@ import React, { useState } from 'react';
 const Footer = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  // Section data (order matches your request)
+  // Section data with actual URLs (example structure)
   const aboutSection = {
     title: 'About Us',
     links: [
-      'Company Profile',
-      'Leadership',
-      'Milestones',
-      'Awards',
-      'Jubilant Bhartia Group',
-      'Professional Lighting',
-    ],
-  };
-  const contactSection = {
-    title: 'Contact Us',
-    links: ['Contact Details', 'Real Estate'],
-  };
-  const brandsSection = {
-    title: 'Brands',
-    links: [
-      'Domino’s Pizza',
-      'Popeyes',
-      'Coffy',
-      "Dunkin'",
-      'Hong’s Kitchen',
-      'Franchise Information',
-    ],
-  };
-  const newsroomSection = {
-    title: 'Newsroom',
-    links: ['Press Release'],
-  };
-  const sustainabilitySection = {
-    title: 'Sustainability',
-    links: [
-      'Sustainability Progress',
-      'Sustainability Targets',
-      'Sustainability Profile',
-      'Reports',
-      'Key CSR Engagements',
-      'Corporate Citizenship',
-    ],
-  };
-  const careerSection = {
-    title: 'Career',
-    links: ['Overview', 'Fraudulent Recruiting'],
-  };
-  const investorSection = {
-    title: 'Investor Relations',
-    links: [
-      'Overview',
-      'Financial Information',
-      'Company Reports',
-      'Governance',
-      'Shareholder Information',
-      'Disclosure under Reg. 46 of LODR',
-      'Investor’s Contact',
-      'Online Dispute Resolution',
+      { label: 'Company Profile', url: '/company-profile' },
+      { label: 'Leadership', url: '/leadership' },
+      { label: 'Milestones', url: '/milestones' },
+      { label: 'Awards', url: '/awards' },
+      { label: 'Jubilant Bhartia Group', url: '/jubilant-bhartia' },
+      { label: 'Professional Lighting', url: '/professional-lighting' },
     ],
   };
 
-  // For mobile accordion: flatten all sections in order
+  const contactSection = {
+    title: 'Contact Us',
+    links: [
+      { label: 'Contact Details', url: '/contact' },
+      { label: 'Real Estate', url: '/real-estate' },
+    ],
+  };
+
+  const brandsSection = {
+    title: 'Brands',
+    links: [
+      { label: 'Domino’s Pizza', url: '/brands/dominos' },
+      { label: 'Popeyes', url: '/brands/popeyes' },
+      { label: 'Coffy', url: '/brands/coffy' },
+      { label: "Dunkin'", url: '/brands/dunkin' },
+      { label: 'Hong’s Kitchen', url: '/brands/hongs-kitchen' },
+      { label: 'Franchise Information', url: '/franchise' },
+    ],
+  };
+
+  const newsroomSection = {
+    title: 'Newsroom',
+    links: [
+      { label: 'Press Release', url: '/press-release' },
+    ],
+  };
+
+  const sustainabilitySection = {
+    title: 'Sustainability',
+    links: [
+      { label: 'Sustainability Progress', url: '/sustainability/progress' },
+      { label: 'Sustainability Targets', url: '/sustainability/targets' },
+      { label: 'Sustainability Profile', url: '/sustainability/profile' },
+      { label: 'Reports', url: '/sustainability/reports' },
+      { label: 'Key CSR Engagements', url: '/csr' },
+      { label: 'Corporate Citizenship', url: '/sustainability/citizenship' },
+    ],
+  };
+
+  const careerSection = {
+    title: 'Career',
+    links: [
+      { label: 'Overview', url: '/career' },
+      { label: 'Fraudulent Recruiting', url: '/career/fraud-warning' },
+    ],
+  };
+
+  const investorSection = {
+    title: 'Investor Relations',
+    links: [
+      { label: 'Overview', url: '/investors' },
+      { label: 'Financial Information', url: '/investors/financials' },
+      { label: 'Company Reports', url: '/investors/reports' },
+      { label: 'Governance', url: '/investors/governance' },
+      { label: 'Shareholder Information', url: '/investors/shareholders' },
+      { label: 'Disclosure under Reg. 46 of LODR', url: '/investors/disclosures' },
+      { label: 'Investor’s Contact', url: '/investors/contact' },
+      { label: 'Online Dispute Resolution', url: '/investors/dispute-resolution' },
+    ],
+  };
+
   const mobileSections = [
     aboutSection,
     contactSection,
@@ -74,92 +87,81 @@ const Footer = () => {
     investorSection,
   ];
 
-  // Accordion toggle handler
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
     <footer className="bg-black text-gray-300 px-4 md:px-8 py-12">
-      {/* Desktop: Custom columns, Mobile: Accordion */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1350px] mx-auto">
         <div className="hidden md:grid grid-cols-4 gap-10">
-          {/* 1st Column: About Us (above), Contact Us (below) */}
           <div>
-            {/* About Us */}
             <h3 className="text-lg font-semibold mb-3 border-b border-gray-500 pb-1">{aboutSection.title}</h3>
             <ul className="space-y-2 text-sm mb-6">
-              {aboutSection.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-white transition block">{link}</a>
+              {aboutSection.links.map(({ label, url }) => (
+                <li key={label}>
+                  <a href={url} className="hover:text-white transition block">{label}</a>
                 </li>
               ))}
             </ul>
-            {/* Contact Us */}
             <h3 className="text-lg font-semibold mb-3 border-b border-gray-500 pb-1">{contactSection.title}</h3>
             <ul className="space-y-2 text-sm">
-              {contactSection.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-white transition block">{link}</a>
+              {contactSection.links.map(({ label, url }) => (
+                <li key={label}>
+                  <a href={url} className="hover:text-white transition block">{label}</a>
                 </li>
               ))}
             </ul>
           </div>
-          {/* 2nd Column: Brands (above), Newsroom (below) */}
           <div>
-            {/* Brands */}
             <h3 className="text-lg font-semibold mb-3 border-b border-gray-500 pb-1">{brandsSection.title}</h3>
             <ul className="space-y-2 text-sm mb-6">
-              {brandsSection.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-white transition block">{link}</a>
+              {brandsSection.links.map(({ label, url }) => (
+                <li key={label}>
+                  <a href={url} className="hover:text-white transition block">{label}</a>
                 </li>
               ))}
             </ul>
-            {/* Newsroom */}
             <h3 className="text-lg font-semibold mb-3 border-b border-gray-500 pb-1">{newsroomSection.title}</h3>
             <ul className="space-y-2 text-sm">
-              {newsroomSection.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-white transition block">{link}</a>
+              {newsroomSection.links.map(({ label, url }) => (
+                <li key={label}>
+                  <a href={url} className="hover:text-white transition block">{label}</a>
                 </li>
               ))}
             </ul>
           </div>
-          {/* 3rd Column: Sustainability (above), Career (below) */}
           <div>
-            {/* Sustainability */}
             <h3 className="text-lg font-semibold mb-3 border-b border-gray-500 pb-1">{sustainabilitySection.title}</h3>
             <ul className="space-y-2 text-sm mb-6">
-              {sustainabilitySection.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-white transition block">{link}</a>
+              {sustainabilitySection.links.map(({ label, url }) => (
+                <li key={label}>
+                  <a href={url} className="hover:text-white transition block">{label}</a>
                 </li>
               ))}
             </ul>
-            {/* Career */}
             <h3 className="text-lg font-semibold mb-3 border-b border-gray-500 pb-1">{careerSection.title}</h3>
             <ul className="space-y-2 text-sm">
-              {careerSection.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-white transition block">{link}</a>
+              {careerSection.links.map(({ label, url }) => (
+                <li key={label}>
+                  <a href={url} className="hover:text-white transition block">{label}</a>
                 </li>
               ))}
             </ul>
           </div>
-          {/* 4th Column: Investor Relations */}
           <div>
             <h3 className="text-lg font-semibold mb-3 border-b border-gray-500 pb-1">{investorSection.title}</h3>
             <ul className="space-y-2 text-sm">
-              {investorSection.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-white transition block">{link}</a>
+              {investorSection.links.map(({ label, url }) => (
+                <li key={label}>
+                  <a href={url} className="hover:text-white transition block">{label}</a>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        {/* Mobile: Accordion */}
+
+        {/* Mobile Accordion */}
         <div className="md:hidden">
           {mobileSections.map((section, index) => (
             <div key={section.title} className="mb-4">
@@ -183,10 +185,10 @@ const Footer = () => {
                 className={`space-y-2 text-sm overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96' : 'max-h-0'
                   }`}
               >
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="hover:text-white transition block">
-                      {link}
+                {section.links.map(({ label, url }) => (
+                  <li key={label}>
+                    <a href={url} className="hover:text-white transition block">
+                      {label}
                     </a>
                   </li>
                 ))}
@@ -198,25 +200,15 @@ const Footer = () => {
 
       {/* Logos and Apps */}
       <div className="mt-12 flex bg-white w-fit mx-auto p-2 rounded-2xl items-stretch flex-wrap justify-center gap-4">
-        <div className=''>
+        <div>
           <img src="./app-store.svg" alt="App Store" className="h-10 mb-2" />
           <img src="./play-store.svg" alt="Google Play" className="h-10" />
         </div>
-        <div className='bg-[#F1F1F1] rounded-xl flex-col flex justify-center'>
-          <img src="./dominos.svg" alt="Dominos" className="h-10" />
-        </div>
-        <div className='bg-[#F1F1F1] rounded-xl flex-col flex justify-center'>
-          <img src="./popeyes.svg" alt="Popeyes" className="h-10" />
-        </div>
-        <div className='bg-[#F1F1F1] rounded-xl flex-col flex justify-center'>
-          <img src="./coffy.svg" alt="Coffy" className="h-10" />
-        </div>
-        <div className='bg-[#F1F1F1] rounded-xl flex-col flex justify-center'>
-          <img src="./hongs.svg" alt="Hong's Kitchen" className="h-10" />
-        </div>
-        <div className='bg-[#F1F1F1] rounded-xl flex-col flex justify-center'>
-          <img src="./dunkin.svg" alt="Dunkin'" className="h-10" />
-        </div>
+        {['dominos', 'popeyes', 'coffy', 'hongs', 'dunkin'].map(brand => (
+          <div key={brand} className="bg-[#F1F1F1] rounded-xl flex-col flex justify-center">
+            <img src={`./${brand}.svg`} alt={brand} className="h-10" />
+          </div>
+        ))}
       </div>
 
       {/* Bottom Text */}

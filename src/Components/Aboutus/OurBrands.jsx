@@ -6,35 +6,35 @@ const brands = [
     name: "Domino’s",
     desc: "#1 in Pizza Globally",
     image: "/aboutus/Background.png",
-    logo: "/aboutus/Dominos.svg",
+    logo: "./dominos.svg",
     link: "#",
   },
   {
     name: "Popeyes",
     desc: "#2 in Chicken Globally",
     image: "/aboutus/Background (1).png",
-    logo: "/aboutus/popeyes.svg",
+    logo: "./popeyes.svg",
     link: "#",
   },
   {
     name: "COFFY",
     desc: "Fast growing Café Brand",
     image: "/aboutus/Background (2).png",
-    logo: "/aboutus/coffy.svg",
+    logo: "./coffy.svg",
     link: "#",
   },
   {
     name: "Hong’s Kitchen",
     desc: "First Indo-Chinese QSR Brand",
     image: "/aboutus/Background (3).png",
-    logo: "/aboutus/hongs-kitchen.svg",
+    logo: "./hongs.svg",
     link: "#",
   },
   {
     name: "Dunkin’",
     desc: "#1 Coffee & Donuts QSR Brand in USA",
     image: "/aboutus/Background (4).png",
-    logo: "/aboutus/dunkin-logo 1.svg",
+    logo: "./dunkin.svg",
     link: "#",
   },
 ];
@@ -86,7 +86,7 @@ export default function OurBrands() {
                 >
                   <img
                     src={brand.logo}
-                    className="h-10 w-auto mb-1"
+                    className="h-8 .   w-auto mb-1"
                     alt={brand.name}
                   />
                   <p className="text-xs text-center">{brand.desc}</p>

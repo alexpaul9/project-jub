@@ -16,13 +16,13 @@ const Popeyes = () => {
         <div>
             <GlobalCover
                 title={<img src="./popeyes/popeyes-title.svg" alt="Dominos" className="h-24" />}
-                image="./popeyes/popeyes-banner.png"
+                video="./Website Final Videos/popeyes/Popeyes.webm"
                 subNav={subLinks}
                 theme={"#f25a22"}
                 themeLine={"#02b3aa"}
             />
             <div className="container-wrapper">
-                <div className="max-w-screen-xl mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-16">
                     <section className="my-16">
                         <div className="mx-auto flex flex-col md:flex-row items-center gap-10">
                             {/* Left Text Area */}
@@ -58,7 +58,7 @@ const Popeyes = () => {
 
             <div className="mx-auto my-16 py-4 bg-[#f25a22]">
                 <div className="container-wrapper">
-                    <div className="max-w-screen-xl flex justify-between items-center gap-6 mx-auto my-16">
+                    <div className="max-w-[1350px] flex justify-between items-stretch gap-6 mx-auto my-16">
                         <div className='md:w-1/2 mx-auto text-white'>
                             <h2 className="text-3xl md:text-5xl mb-4 font-light leading-tight">
                                 We brought<br />Popeyes to India
@@ -68,15 +68,23 @@ const Popeyes = () => {
                             </p>
                             <img src="./popeyes/23-cities.svg" alt="" />
                         </div>
-                        <div className='md:w-1/2 mx-auto text-white'>
-                            <img src="./popeyes/we-bought.png" className='w-full' alt="" />
+                        <div className='md:w-1/2 rounded-4xl overflow-hidden mx-auto text-white'>
+                            {/* <img src="./popeyes/we-bought.png" className='w-full' alt="" /> */}
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className=" inset-0 w-full h-full object-cover z-0"
+                                src="./Website Final Videos/popeyes/C4550.webm" // or your correct video path
+                            />
                         </div>
                     </div>
                 </div>
             </div>
 
             <div className="container-wrapper">
-                <div className="max-w-screen-xl mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-16">
                     <section>
                         {/* First Row: Image + First Card */}
                         <div className="flex flex-col lg:flex-row items-start gap-8 mb-10">
@@ -140,10 +148,11 @@ const Popeyes = () => {
             </div>
 
             <div className="mx-auto mt-16 py-6 bg-[#f25a22]">
-                <div className="container-wrapper">
-                    <TVCs data={tvcData}/>
+                <div className="container-wrapper ">
+                    
+                    <TVCs data={tvcData} />
                 </div>
-                </div>
+            </div>
         </div>
     )
 }

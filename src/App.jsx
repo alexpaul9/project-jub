@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './Components/Layout';
 
 // Pages
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
 // import About from './Pages/About';
 import Sustainability from './Pages/Sustainability';
 import Investors from './Pages/Investors';
@@ -26,6 +26,11 @@ import Newsroom from './Pages/Newsroom';
 // import Career from './Pages/Career';
 // import Newsroom from './Pages/Newsroom';
 // import Contact from './Pages/Contact';
+import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    'pdfjs-dist/build/pdf.worker.min.mjs',
+    import.meta.url,
+  ).toString();
 
 function App() {
   return (

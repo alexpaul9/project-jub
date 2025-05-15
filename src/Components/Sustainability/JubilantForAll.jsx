@@ -3,10 +3,19 @@ import React from 'react';
 const JubilantForAll = () => {
   return (
     <div className="w-full bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 items-stretch">
+      <div className=" mx-auto flex flex-col md:flex-row gap-6 items-stretch">
         {/* Left image box */}
-        <div className="bg-[#030D11] rounded-[32px] w-full md:w-1/2 overflow-hidden md:h-[320px]">
-          <img src="./placeholder.jpeg" className="object-cover w-full h-full" alt="" />
+        <div className="bg-[#030D11] relative rounded-[32px] w-full md:w-1/2 overflow-hidden md:h-[320px]">
+          {/* <img src="./placeholder.jpeg" className="object-cover w-full h-full" alt="" /> */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            src="./Website Final Videos/Sustainability/Jubilant_for_All.webm" // or your correct video path
+          />
+
         </div>
 
         {/* Right text box */}
@@ -22,7 +31,7 @@ const JubilantForAll = () => {
       </div>
 
 
-      <div className="max-w-7xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+      <div className="mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
 
         {/* Left section: Light green on top, dark greens below */}
         <div className="col-span-2 flex flex-col gap-6">
@@ -57,18 +66,26 @@ const JubilantForAll = () => {
         </div>
 
         {/* Right section: Image */}
-        <div className="rounded-[32px] overflow-hidden h-full">
-          <img
+        <div className="relative rounded-[32px] overflow-hidden h-full">
+          {/* <img
             src="./sustainability/poultry-farm.png" // Replace with actual path
             alt="Poultry Farm"
             className="object-cover w-full h-full"
+          /> */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            src="./Website Final Videos/Sustainability/Farm_traceability_for_chicken.webm" // or your correct video path
           />
         </div>
 
       </div>
 
 
-      <div className="relative mt-16 bg-black rounded-[32px] overflow-hidden text-white max-w-7xl mx-auto flex flex-col md:flex-row items-stretch">
+      <div className="relative mt-16 bg-black rounded-[32px] overflow-hidden text-white mx-auto flex flex-col md:flex-row items-stretch">
         {/* Background Image */}
         <img
           src="./sustainability/chairman_bg.png"
@@ -79,10 +96,10 @@ const JubilantForAll = () => {
         {/* Left Text Box */}
         <div className="relative z-10 w-full md:w-2/3 p-6 md:p-12 flex flex-col justify-between">
           {/* Opening Quote */}
-          <img src="./sustainability/quote1.svg" alt="quote" className="w-10 mb-4" />
+          <img src="./sustainability/quote1.svg" alt="quote" className="w-10 mb-" />
 
           {/* Quote Text */}
-          <p className="text-white text-lg sm:text-xl leading-relaxed">
+          <p className="text-white md:text-[24px]  sm:text-xl leading-relaxed">
             Sustainability is deeply embedded in our multi-stakeholder business model, as a key tenet of generating long-term value. We have shared the multi-year, time-bound goals, anchored around Food, Planet, People and Communities and Governance. The Sustainability and CSR Committee of the Board is responsible for overseeing and guiding our Company’s sustainability strategy, performance and its implementation.<span className="inline-block align-[0.2em] ml-1">
               <img src="./sustainability/quote2.svg" alt="quote" className="w-[20px] -mb-10 ml-4 h-[20px]" />
             </span>

@@ -18,8 +18,9 @@ const Navbar = () => {
   };
 
   const MenuBlock = ({ menus, align = 'left', onClick }) => (
-    <div className={`relative flex justify-${align} gap-4 text-[14px] font-medium pt-3`}>
-      <div className="absolute top-0 left-0 w-full h-[2px] bg-gray-200"></div>
+    <div className={`relative w-full flex justify-${align} gap-4 text-[14px] font-medium pt-3`}>
+    {/* Green divider spanning full width */}
+    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gray-200"></div>
       {menus.map((item) => {
         const path = getPath(item);
         const isActive = location.pathname === path;
@@ -49,7 +50,7 @@ const Navbar = () => {
   return (
     <div className="w-full bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       {/* Top Nav */}
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center py-4 px-4 lg:px-8">
+      <div className="max-w-[1350px] mx-auto flex justify-between items-center py-4">
         {/* Hamburger for mobile */}
         <div className="lg:hidden block">
           <GiHamburgerMenu
@@ -74,8 +75,8 @@ const Navbar = () => {
         {/* Center Logo */}
         <div className="w-1/4 mx-8 flex justify-center items-center">
           <img
-            src="./jfl-logo.svg"
-            // src="./vite.svg"
+            // src="./jfl-logo.svg"
+            src="./vite.svg"
             alt="Logo"
             className="h-20 object-contain"
           />
@@ -85,15 +86,15 @@ const Navbar = () => {
         <div className="w-full hidden lg:flex flex-col items-end gap-3">
           <div className="flex gap-4 text-sm text-gray-600 justify-end">
             <div className="flex items-center gap-1 py-2">
-              <FaInstagram className="text-lg" />
+              <img src="/instaico.svg" alt="" />
               <span>Instagram</span>
             </div>
             <div className="flex items-center gap-1">
-              <FaFacebook className="text-lg" />
+            <img src="/fbico.svg" alt="" />
               <span>Facebook</span>
             </div>
             <div className="flex items-center gap-1">
-              <FaYoutube className="text-lg" />
+            <img src="/ytico.svg" alt="" />
               <span>Youtube</span>
             </div>
           </div>

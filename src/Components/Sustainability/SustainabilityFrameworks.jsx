@@ -1,35 +1,38 @@
 import React, { useState } from "react";
-import sustainabilityFrameworks from "@data/sustainnability/sustainabilityFrameworks";
 import Slider from "react-slick";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaChevronDown,
-} from "react-icons/fa";
-import { GoArrowUpRight } from "react-icons/go"; 
+import { FaArrowLeft, FaArrowRight, FaChevronDown } from "react-icons/fa";
+import { GoArrowUpRight } from "react-icons/go";
 
-const CustomPrevArrow = (props) => (
+// Custom Arrows
+const CustomPrevArrow = ({ onClick }) => (
   <button
-    onClick={props.onClick}
-    className="absolute left-[47%] cursor-pointer -bottom-10 z-10 text-[#0b3932] text-xl"
+    onClick={onClick}
+    className="absolute md:left-[47%] cursor-pointer -bottom-10 z-10 text-[#0b3932] text-xl"
   >
     <FaArrowLeft />
   </button>
 );
 
-const CustomNextArrow = (props) => (
+const CustomNextArrow = ({ onClick }) => (
   <button
-    onClick={props.onClick}
-    className="absolute right-[47%] cursor-pointer -bottom-10 z-10 text-[#0b3932] text-xl"
+    onClick={onClick}
+    className="absolute md:right-[47%] cursor-pointer -bottom-10 z-10 text-[#0b3932] text-xl"
   >
     <FaArrowRight />
   </button>
 );
 
-const SustainabilityFrameworks = ({title}) => {
-  const years = Object.keys(sustainabilityFrameworks).sort().reverse();
-  const [selectedYear, setSelectedYear] = useState(years[0]);
+// Reusable Component
+const SustainabilityFrameworks = ({ title, data }) => {
+  // Safely get years
+  const years = data ? Object.keys(data).sort().reverse() : [];
+  const [selectedYear, setSelectedYear] = useState(years[0] || "");
   const [open, setOpen] = useState(false);
+
+  const handleSelect = (year) => {
+    setSelectedYear(year);
+    setOpen(false);
+  };
 
   const settings = {
     dots: false,
@@ -49,26 +52,30 @@ const SustainabilityFrameworks = ({title}) => {
     ],
   };
 
-  const handleSelect = (year) => {
-    setSelectedYear(year);
-    setOpen(false);
-  };
+  // Don't render if data is missing or empty
+  if (!data || years.length === 0) {
+    return (
+      <div className="py-6 text-center text-[#0b3932] text-lg">
+        No data available for this selection
+      </div>
+    );
+  }
 
   return (
     <div className="py-6">
+      {/* Title and Dropdown */}
       <div className="flex justify-between items-center flex-wrap mb-6">
-      <h2 className="text-3xl manrope-thin text-[#0b3932]">
-          {title}
-        </h2>
+        <h2 className="text-4xl manrope-thin text-[#0b3932]">{title}</h2>
 
-        {/* Custom Dropdown */}
-        <div className="relative min-w-[140px]">
+        <div className="relative min-w-[100px]">
           <button
             onClick={() => setOpen(!open)}
-            className="bg-[#b2d235] text-[#0b3932] font-semibold rounded-full px-6 py-2 flex items-center justify-between w-full shadow-md focus:outline-none transition"
+            className="bg-[#b2d235] text-black font-thin rounded-2xl px-4 py-2 flex items-center justify-between w-full shadow-md focus:outline-none transition"
           >
             {selectedYear}
-            <FaChevronDown className={`ml-2 transition-transform ${open ? "rotate-180" : ""}`} />
+            <FaChevronDown
+              className={`ml-2 transition-transform ${open ? "rotate-180" : ""}`}
+            />
           </button>
 
           {open && (
@@ -87,11 +94,12 @@ const SustainabilityFrameworks = ({title}) => {
         </div>
       </div>
 
+      {/* Slider */}
       <Slider {...settings}>
-        {sustainabilityFrameworks[selectedYear].map((item, idx) => (
+        {(data[selectedYear] || []).map((item, idx) => (
           <div key={idx} className="px-2">
-            <div className="bg-[#edf3eb] rounded-2xl border border-[#d6e7d5] h-40 flex flex-col justify-between p-6">
-              <h3 className="text-[#0b3932] text-2xl font-medium">{item.title}</h3>
+            <div className="bg-[#edf3eb] rounded-2xl border border-[#d6e7d5] h-46 flex flex-col gap-1 justify-between p-6">
+              <h3 className="text-[#0b3932] text-2xl font-normal mb-2">{item.title}</h3>
               <a
                 href={item.link}
                 target="_blank"

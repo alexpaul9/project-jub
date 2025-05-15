@@ -3,27 +3,33 @@ import React from "react";
 const hotspots = [
   {
     id: 1,
-    top: "20%",
-    left: "10%",
-    text: "Poultry Farm",
+    top: "40%",
+    left: "25%",
+    text: "Vendors: We select ethical suppliers to ensure a positive impact at every stage of our sourcing process.",
   },
   {
     id: 2,
-    top: "25%",
-    left: "20%",
-    text: "Dairy Farm",
+    top: "76%",
+    left: "40%",
+    text: "Stores: Fresh, high-quality meals are prepared transparently, empowering customers with informed choices",
   },
   {
     id: 3,
-    top: "60%",
-    left: "40%",
-    text: "Fresh, high-quality meals are prepared transparently, empowering customers with informed choices",
+    top: "25%",
+    left: "60%",
+    text: "Head office: Our tech team safeguards sensitive data, ensuring operational integrity and supporting sustainable practices.",
   },
   {
     id: 4,
+    top: "62%",
+    left: "65%",
+    text: "Delivery at home: Eco-friendly packaging and our electric fleet reduce environmental impact while delivering fresh meals to your doorstep.",
+  },
+  {
+    id: 5,
     top: "65%",
-    left: "75%",
-    text: "Houses",
+    left: "28%",
+    text: "Cold Chain Logistics: IoT-enabled logistics maintain optimal conditions for raw materials, minimizing waste and ensuring quality.",
   },
   // ➕ Add more hotspots here as needed
 ];
@@ -32,7 +38,7 @@ const ValueChain = () => {
   return (
     <div>
         <h2 className="manrope-thin text-4xl mb-6">Value Chain</h2>
-    <div className="relative rounded-3xl border-2 border-gray-100 overflow-hidden w-full max-w-7xl mx-auto">
+    <div className="relative rounded-3xl border-2 border-gray-100 overflow-hidden w-full max-w-[1350px] mx-auto">
       <img
         src="./sustainability/value_chain.png"
         alt="Value Chain"

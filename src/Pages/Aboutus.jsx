@@ -29,28 +29,28 @@ const Aboutus = () => {
             />
             <div className='bg-[#f2f6f8] py-2'>
                 <div className="container-wrapper">
-                    <div className="max-w-screen-xl mx-auto my-16">
+                    <div className="max-w-[1350px] mx-auto my-16">
                         <JFLOverview />
                     </div>
                 </div>
             </div>
             <div className="container-wrapper">
-                <div className="max-w-screen-xl mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-8">
                     <OurBrands />
                 </div>
-                <div className="max-w-screen-xl mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto mb-16">
                     <KeyValues title={"Q3FY25 - Key Figures"} theme1={"#096080"} theme2={"#03253E"} text={"#4ac9f6"} data={keyFiguresData} />
                 </div>
             </div>
             <div className='bg-[#f5f7fa] py-2'>
                 <div className="container-wrapper">
-                    <div className="max-w-screen-xl mx-auto my-16">
+                    <div className="max-w-[1350px] mx-auto my-16">
                         <OurPurpose />
                     </div>
                 </div>
             </div>
             <div className="container-wrapper">
-                <div className="max-w-screen-xl mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-16">
                     <ValueCreation />
                 </div>
             </div>

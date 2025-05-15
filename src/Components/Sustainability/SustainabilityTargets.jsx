@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TargetRow = ({ icons = [], target, progress }) => {
+const TargetRow = ({ icons = [], target, progress, showTitle, title }) => {
   // Split icons into rows of 4
   const chunkIcons = (arr, size) => {
     return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
@@ -11,30 +11,39 @@ const TargetRow = ({ icons = [], target, progress }) => {
   const iconRows = chunkIcons(icons, 4);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-      {/* Icons Column */}
-      <div className="flex flex-col gap-2 min-h-[100px]">
-        {iconRows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex gap-2">
-            {row.map((icon, index) => (
-              <img
-                key={index}
-                src={icon}
-                alt=""
-                className="w-8 h-8 md:w-10 md:h-10 object-contain"
-              />
-            ))}
-          </div>
-        ))}
+    <div className="md:flex justify-between  gap-4 mb-4">
+      {/* Title Row: Only show on first row */}
+      <div className='md:w-[25%] flex flex-col gap-4'>
+        {showTitle && (
+          <h3 className="text-2xl mb-4 md:text-5xl manrope-thin text-[#48893b]">
+            {title}
+          </h3>
+        )}
+                                   
+        {/* Icons Column */}
+        <div className="flex flex-col gap-2 min-h-[100px]">
+          {iconRows.map((row, rowIndex) => (
+            <div key={rowIndex} className="flex gap-2">
+              {row.map((icon, index) => (
+                <img
+                  key={index}
+                  src={icon}
+                  alt=""
+                  className="w-8 h-8 md:w-14 md:h-14 object-contain"
+                />
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Target Column */}
-      <div className="bg-white rounded-lg p-4 text-gray-800 shadow-sm border border-gray-200 min-h-[100px]">
+      <div className="bg-white md:w-[37%] rounded-lg p-4 text-gray-800 shadow-sm border border-gray-200 min-h-[100px]">
         <p className="text-sm leading-relaxed">{target}</p>
       </div>
 
       {/* Progress Column */}
-      <div className="bg-white rounded-lg p-4 text-gray-800 shadow-sm border border-gray-200 min-h-[100px]">
+      <div className="bg-white md:w-[37%] rounded-lg p-4 text-gray-800 shadow-sm border border-gray-200 min-h-[100px]">
         <p className="text-sm leading-relaxed">{progress}</p>
       </div>
     </div>
@@ -42,9 +51,7 @@ const TargetRow = ({ icons = [], target, progress }) => {
 };
 
 const Section = ({ title, rows }) => (
-  <section className="bg-[#e9f0e6] rounded-2xl p-6 mb-8">
-    <h3 className="text-5xl manrope-thin text-[#48893b] mb-6">{title}</h3>
-
+  <section className="bg-[#e9f0e6] border border-[#b8cfb3] rounded-2xl p-6 mb-8">
     {/* Column Headings */}
     <div className="hidden md:grid grid-cols-3 font-semibold text-gray-700 mb-2 px-1">
       <div></div>
@@ -53,7 +60,12 @@ const Section = ({ title, rows }) => (
     </div>
 
     {rows.map((row, index) => (
-      <TargetRow key={index} {...row} />
+      <TargetRow
+        key={index}
+        {...row}
+        showTitle={index === 0}
+        title={title}
+      />
     ))}
   </section>
 );
@@ -61,7 +73,7 @@ const Section = ({ title, rows }) => (
 const SustainabilityTargets = () => {
   return (
     <div className="">
-      <h2 className="text-3xl manrope-thin mb-10">Sustainability Targets</h2>
+      <h2 className="text-4xl manrope-thin mb-10">Sustainability Targets</h2>
 
       <Section
         title="Food"
@@ -83,10 +95,10 @@ const SustainabilityTargets = () => {
             icons: [],
             target: 'Domino’s to continue maintaining 6 sigma levels in food safety-related customer complaint.',
             progress: (
-                    <>
-                      <strong>93%</strong> of ingredients manufacturers are certified under GFSI programmes.
-                    </>
-              ),
+              <>
+                <strong>93%</strong> of ingredients manufacturers are certified under GFSI programmes.
+              </>
+            ),
           },
         ]}
       />
@@ -111,11 +123,7 @@ const SustainabilityTargets = () => {
           },
           {
             icons: [],
-            target: (
-              <>
-                Our commissaries to be 100% water neutral by FY’30.
-              </>
-            ),
+            target: 'Our commissaries to be 100% water neutral by FY’30.',
             progress: (
               <>
                 Implemented rainwater harvesting structures in our Standard Contractual Clauses.
@@ -139,7 +147,7 @@ const SustainabilityTargets = () => {
           },
         ]}
       />
-    <div className='bg-[#e9f0e6] rounded-2xl'>
+
       <Section
         title="People"
         rows={[
@@ -156,7 +164,7 @@ const SustainabilityTargets = () => {
             ],
             target: (
               <>
-                <strong>100%</strong>  farm traceability of key ingredients  in our food products at Domino’s, Popeyes and Hong’s Kitchen by FY’30.
+                <strong>100%</strong> farm traceability of key ingredients in our food products at Domino’s, Popeyes and Hong’s Kitchen by FY’30.
               </>
             ),
             progress: (
@@ -186,46 +194,41 @@ const SustainabilityTargets = () => {
       <Section
         title="Communities"
         rows={[
-            {
-                icons: [],
-                target: (
-                  <>
-                    Achieve a <strong>50%</strong> increase (from baseline FY’22) in total training hours by FY’26.
-                    
-                  </>
-                ),
-                progress: (
-                  <>
-                    We over-achieved the training hours target through classroom trainings and additional trainings were added across our flexi and business associates.
-                    <br /><br />
-                    In FY’24, 274,179 man-hours of training were delivered.
-                  </>
-                ),
-              },
-            {
-                icons: [],
-                target: (
-                  <>
-                    Around one+ million individuals to be positively impacted through our community outreach engagements by FY’30.
-                  </>
-                ),
-                progress: (
-                  <>
-                    Positively impacted <strong>569,950</strong>  people in  FY 23-24, through our community outreach engagement, indicating progress towards our goal.
-                    <br />
-                    <ul className='px-4 my-2 list-disc marker:text-[#2c761c]'>
-                    <li><span className='text-[#2c761c] manrope-bold'>Healthcare:</span> Catering to a population of <strong>469,000</strong> people around commissaries, treated more than 107,000 patients.</li>
-                    
-                    <li><span className='text-[#2c761c] manrope-bold'>Skill Development:</span> Trained <strong>6,600+</strong> candidates from the under-catered areas of the country.</li>
-                    
-                    <li><span className='text-[#2c761c] manrope-bold'>Dairy Farmer Development:</span> Working with <strong>7,240</strong> farmers.</li>
-                    
-                    <li><span className='text-[#2c761c] manrope-bold'>Food Safety and Eat right:</span> Trained <strong>5,300</strong> food handlers and spread awareness to <strong>5,000+</strong> citizens through Eat Right mela.</li>
-                    </ul>
-                  </>
-                ),
-              },
-          
+          {
+            icons: [],
+            target: (
+              <>
+                Achieve a <strong>50%</strong> increase (from baseline FY’22) in total training hours by FY’26.
+              </>
+            ),
+            progress: (
+              <>
+                We over-achieved the training hours target through classroom trainings and additional trainings were added across our flexi and business associates.
+                <br /><br />
+                In FY’24, 274,179 man-hours of training were delivered.
+              </>
+            ),
+          },
+          {
+            icons: [],
+            target: (
+              <>
+                Around one+ million individuals to be positively impacted through our community outreach engagements by FY’30.
+              </>
+            ),
+            progress: (
+              <>
+                Positively impacted <strong>569,950</strong> people in FY 23-24, through our community outreach engagement, indicating progress towards our goal.
+                <br />
+                <ul className='px-4 my-2 list-disc marker:text-[#2c761c]'>
+                  <li><span className='text-[#2c761c] manrope-bold'>Healthcare:</span> Catering to a population of <strong>469,000</strong> people around commissaries, treated more than 107,000 patients.</li>
+                  <li><span className='text-[#2c761c] manrope-bold'>Skill Development:</span> Trained <strong>6,600+</strong> candidates from the under-catered areas of the country.</li>
+                  <li><span className='text-[#2c761c] manrope-bold'>Dairy Farmer Development:</span> Working with <strong>7,240</strong> farmers.</li>
+                  <li><span className='text-[#2c761c] manrope-bold'>Food Safety and Eat right:</span> Trained <strong>5,300</strong> food handlers and spread awareness to <strong>5,000+</strong> citizens through Eat Right mela.</li>
+                </ul>
+              </>
+            ),
+          },
         ]}
       />
 
@@ -234,19 +237,18 @@ const SustainabilityTargets = () => {
         rows={[
           {
             target: (
-                <>
-                  Ensure highest level of governance, ethics, transparency and compliance across all operations and geographies.
-                </>
-              ),
+              <>
+                Ensure highest level of governance, ethics, transparency and compliance across all operations and geographies.
+              </>
+            ),
             progress: (
-                <>
-                  Developed an <strong>e-learning</strong> module on Code of Conduct for mandatory training across JFL.
-                </>
-              ),
+              <>
+                Developed an <strong>e-learning</strong> module on Code of Conduct for mandatory training across JFL.
+              </>
+            ),
           },
         ]}
       />
-      </div>
     </div>
   );
 };

@@ -1,5 +1,11 @@
 const newsLetterData = [
     {
+      year: '2024-25',
+      title: 'CSR Newsletter Report 2024-25',
+      thumbnail: './csr/nl1.png',
+      pdfLink: '/view.pdf',
+    },
+    {
       year: '2023-24',
       title: 'CSR Newsletter Report 2023-24',
       thumbnail: './csr/nl1.png',

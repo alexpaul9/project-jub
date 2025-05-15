@@ -51,6 +51,14 @@ const Dominos = () => {
                                     alt="Domino's pizza"
                                     className="rounded-3xl w-full object-cover"
                                 />
+                                {/* <video
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    className="absolute inset-0 w-full h-full object-cover z-0"
+                                    src="./Website Final Videos/AboutUS/BlueInfinity.webm" // or your correct video path
+                                /> */}
                             </div>
                         </div>
 
@@ -63,7 +71,7 @@ const Dominos = () => {
                     <div className="md:flex justify-between items-stretch gap-6 mx-auto">
                         {/* Left Image */}
                         <div className="md:w-1/2 mb-4 md:mb-0 flex">
-                            <img src="./dominos/dom2 2.png" className="w-full object-cover rounded-lg" alt="" />
+                            <img src="./Website Final Videos/Dominos/COUPLE ROMANCE WHOLE.jpg" className="w-full object-cover rounded-4xl" alt="" />
                         </div>
 
                         {/* Right Content */}

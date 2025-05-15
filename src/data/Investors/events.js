@@ -3,13 +3,13 @@ const eventVideos = [
       id: 1,
       title: "Mapping Expansion",
       thumbnail: "/investors/et1.png", // Correct path
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID1",
+      videoUrl: "https://www.youtube.com/embed/lvMW4FijPXQ?si=wVS-PPVXgvIUHuE8",
     },
     {
       id: 2,
       title: "Be The Bold",
       thumbnail: "/investors/et2.png", // Correct path
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID2",
+      videoUrl: "https://www.youtube.com/embed/lvMW4FijPXQ?si=wVS-PPVXgvIUHuE8",
     },
     {
       id: 3,

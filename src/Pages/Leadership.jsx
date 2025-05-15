@@ -26,12 +26,12 @@ const Leadership = () => {
             <div className="container-wrapper">
                 <div className="max-w-[1350px] mx-auto my-16">
 
-                    <div className="container-wrapper py-10">
-                        <div className="flex justify-between items-center mb-6">
-                            <h2 className="text-5xl font-normal text-gray-800 mb-10 ">
+                    <div className="py-10">
+                        <div className="flex justify-between items-center mb-8">
+                            <h2 className="text-5xl font-thin text-gray-800">
                                 {isManagement ? 'Management' : 'Board of Directors'}
                             </h2>
-                            <div className="space-x-2 rounded-xl  bg-[#096080] p-1">
+                            <div className="space-x-2 rounded-xl bg-[#096080] p-1">
                                 <button
                                     onClick={() => setIsManagement(true)}
                                     className={`px-4 py-2 cursor-pointer rounded-lg text-lg font-light transition ${isManagement
@@ -56,7 +56,7 @@ const Leadership = () => {
                             {data.map((person, idx) => (
                                 <div
                                     key={idx}
-                                    className="w-full sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-3xl overflow-hidden transition hover:shadow-xl"
+                                    className="w-full sm:w-[45%] md:w-[30%] lg:w-[23%] rounded-4xl overflow-hidden transition hover:shadow-xl"
                                 >
                                     <div className="relative">
                                         <img

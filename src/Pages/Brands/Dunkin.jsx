@@ -16,13 +16,13 @@ const Dunkin = () => {
         <div>
             <GlobalCover
                 title={<img src="./dunkin/dunkin-title.svg" alt="Dominos" className="h-24" />}
-                image="./popeyes/popeyes-banner.png"
+                video="./Website Final Videos/Dunkins/Dunkins_Banner.webm"
                 subNav={subLinks}
                 theme={"#F30A9B"}
                 themeLine={"#FF7A0A"}
             />
             <div className="container-wrapper">
-                <div className="max-w-screen-xl mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-16">
                     <section className="my-16">
                         <div className="mx-auto flex flex-col md:flex-row items-center gap-10">
                             {/* Left Text Area */}
@@ -63,8 +63,8 @@ const Dunkin = () => {
                 </div>
             </div>
 
-            <div className="mx-auto my-16 py-4">
-                <div className="container-wrapper">
+            <div className="container-wrapper">
+                <div className="mx-auto max-w-[1350px] my-16 py-4">
                     <div className="">
                         <h2 className="text-5xl font-light text-gray-800 mb-10 ">
                             Customers We Serve Globaly
@@ -140,12 +140,12 @@ const Dunkin = () => {
                 </div>
             </div>
 
-            <div className="mx-auto my-16 py-4">
-                <div className="container-wrapper">
+            <div className="container-wrapper">
+                <div className="mx-auto max-w-[1350px] my-16 py-4">
                     <h2 className="text-5xl font-light text-gray-800 mb-10 ">
                         Brand Purpose
                     </h2>
-                    <div className="max-w-screen-xl md:flex  justify-between items-stretch gap-6 mx-auto">
+                    <div className="md:flex  justify-between items-stretch gap-6 mx-auto">
                         {/* Right Content */}
                         <div className="md:w-1/2 ounded-4xl">
                             <div className='bg-[#f2ebf4] border border-[#f6c1db] text-black flex items-center py-6 px-20 rounded-4xl w-full h-full mb-4 md:mb-0'>
@@ -166,12 +166,12 @@ const Dunkin = () => {
                 </div>
             </div>
 
-            <div className="mx-auto my-16 py-4">
-                <div className="container-wrapper">
+            <div className="container-wrapper">
+                <div className="mx-auto max-w-[1350px] my-16 py-4">
                     <h2 className="text-5xl font-light text-gray-800 mb-10 ">
                         Brand Promise
                     </h2>
-                    <div className="max-w-screen-xl md:flex  justify-between items-stretch gap-6 mx-auto">
+                    <div className="md:flex  justify-between items-stretch gap-6 mx-auto">
                         {/* Left Image */}
                         <div className="md:w-1/2 mb-4 md:mb-0 flex">
                             <img src="./dunkin/donuts-feature2.png" className="w-full object-cover rounded-lg" alt="" />
@@ -193,50 +193,52 @@ const Dunkin = () => {
                 </div>
             </div>
 
-            <div className="mx-auto my-16 py-4 bg-[#FF60A3]">
+            <div className='bg-[#FF60A3]'>
                 <div className="container-wrapper">
-                    <div className="max-w-screen-xl flex justify-between items-center gap-6 mx-auto my-16">
-                        <div className='md:w-1/2 mx-auto text-white'>
-                            <h2 className="text-3xl md:text-5xl mb-4 font-light leading-tight">
-                                Dunkin' Footprint in India
-                            </h2>
-                            <p className='mb-4 text-2xl bg-white rounded-3xl p-6 text-black'>
-                                Re-launched in November 2022 and
-                                since then opened 12 stores.
-                            </p>
-                            <div className="flex mt-4 w-full gap-4 mx-auto">
-                                {/* Highlight 1 */}
-                                <div className="flex items-center gap-8 bg-[#F30A9B] rounded-3xl w-full md:w-1/2 p-4 gap-4">
-                                    <img src="./dunkin/Icons7.png" alt="Biggest Market" className="w-32 h-32 object-contain flex-shrink-0" />
-                                    <div className="flex flex-col justify-center">
-                                        <h3 className="text-4xl font-normal text-white mb-1">10+</h3>
-                                        <p className="text-sm text-whiteleading-snug">
-                                            Cities
-                                        </p>
+                    <div className="mx-auto max-w-[1350px] my-16 py-4">
+                        <div className=" flex justify-between items-center gap-6 mx-auto my-16">
+                            <div className='md:w-1/2 mx-auto text-white'>
+                                <h2 className="text-3xl md:text-5xl mb-4 font-light leading-tight">
+                                    Dunkin' Footprint in India
+                                </h2>
+                                <p className='mb-4 text-2xl bg-white rounded-3xl p-6 text-black'>
+                                    Re-launched in November 2022 and
+                                    since then opened 12 stores.
+                                </p>
+                                <div className="flex mt-4 w-full gap-4 mx-auto">
+                                    {/* Highlight 1 */}
+                                    <div className="flex items-center gap-8 bg-[#F30A9B] rounded-3xl w-full md:w-1/2 p-4 gap-4">
+                                        <img src="./dunkin/Icons7.png" alt="Biggest Market" className="w-32 h-32 object-contain flex-shrink-0" />
+                                        <div className="flex flex-col justify-center">
+                                            <h3 className="text-4xl font-normal text-white mb-1">10+</h3>
+                                            <p className="text-sm text-whiteleading-snug">
+                                                Cities
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
 
-                                {/* Highlight 2 */}
-                                <div className="flex items-center gap-2 bg-[#F30A9B]  rounded-3xl w-full md:w-1/2 p-4 gap-4">
-                                    <img src="./dunkin/Icons8.png" alt="2000+ Stores" className="w-32 h-32 object-contain flex-shrink-0" />
-                                    <div className="flex flex-col justify-center text-sm">
-                                        <h3 className="text-4xl font-normal text-white mb-0.5">31</h3>
-                                        <p className="text-white leading-tight">
-                                            Locations
-                                        </p>
+                                    {/* Highlight 2 */}
+                                    <div className="flex items-center gap-2 bg-[#F30A9B]  rounded-3xl w-full md:w-1/2 p-4 gap-4">
+                                        <img src="./dunkin/Icons8.png" alt="2000+ Stores" className="w-32 h-32 object-contain flex-shrink-0" />
+                                        <div className="flex flex-col justify-center text-sm">
+                                            <h3 className="text-4xl font-normal text-white mb-0.5">31</h3>
+                                            <p className="text-white leading-tight">
+                                                Locations
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className='md:w-1/2 mx-auto text-white'>
-                            <img src="./dunkin/dunkin-feature3.png" className='w-full' alt="" />
+                            <div className='md:w-1/2 mx-auto text-white'>
+                                <img src="./dunkin/dunkin-feature3.png" className='w-full' alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div className="container-wrapper">
-                <div className="max-w-screen-xl mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-16">
                     <div className="flex flex-wrap md:flex-nowrap gap-4 justify-center items-stretch">
                         {/* Card 1 */}
                         <div className="flex flex-col w-full md:w-1/3 bg-[#f2ebf4] border border-[#f6c1db] rounded-3xl p-4">
@@ -282,7 +284,7 @@ const Dunkin = () => {
 
             <div className="mx-auto mt-16 py-4 bg-[#FF60A3]">
                 <div className="container-wrapper">
-                    <div className="max-w-screen-xl flex justify-between items-center gap-6 mx-auto my-16">
+                    <div className="max-w-[1350px] flex justify-between items-center gap-6 mx-auto my-16">
                         <div className='md:w-[40%] mx-auto text-white'>
                             <h2 className="text-3xl md:text-5xl mb-4 font-light leading-tight">
                                 Pivoted To Become <br /> A Coffee-First Brand.
@@ -306,7 +308,7 @@ const Dunkin = () => {
                                 <img src="./dunkin/c-first2.png" className="w-full h-full object-cover" alt="" />
                                 <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                                     <p className="text-white text-lg w-full text-center">Grow in Core & <br />
-                                    Stretch to Premium</p>
+                                        Stretch to Premium</p>
                                 </div>
                             </div>
 
@@ -315,7 +317,7 @@ const Dunkin = () => {
                                 <img src="./dunkin/c-first3.png" className="w-full h-full object-cover" alt="" />
                                 <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                                     <p className="text-white text-lg w-full text-center">Food that compliments <br />
-                                    Coffee Experiences</p>
+                                        Coffee Experiences</p>
                                 </div>
                             </div>
                         </div>

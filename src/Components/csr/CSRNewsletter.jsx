@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
-import { FaDownload, FaBookOpen, FaShareAlt, FaChevronLeft, FaChevronRight, FaChevronDown } from 'react-icons/fa';
-import reportData from '../../data/Investors/annualReportsData';
+import { FaDownload, FaBookOpen, FaShareAlt, FaChevronDown, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import newsLetterData from '../../data/csr/newsLetterData';
+import PDFModal from '../Global/PDFModal';
 
 const CustomPrevArrow = ({ onClick }) => (
-  <div className="absolute -bottom-10 left-1/2 transform -translate-x-16 z-10" onClick={onClick}>
-    <div className="bg-[#22668a] hover:bg-[#1b5472] text-white p-3 rounded-full shadow-md transition cursor-pointer">
-      <FaChevronLeft />
+  <div className="absolute -bottom-10 left-1/2 transform -translate-x-8 z-10" onClick={onClick}>
+    <div className="hover:bg-[#1b5472] duration-300 text-white p-3 rounded-2xl shadow-md transition cursor-pointer">
+      <FaArrowLeft />
     </div>
   </div>
 );
 
 const CustomNextArrow = ({ onClick }) => (
-  <div className="absolute -bottom-10 left-1/2 transform translate-x-16 z-10" onClick={onClick}>
-    <div className="bg-[#22668a] hover:bg-[#1b5472] text-white p-3 rounded-full shadow-md transition cursor-pointer">
-      <FaChevronRight />
+  <div className="absolute -bottom-10 left-1/2 transform translate-x-8 z-10" onClick={onClick}>
+    <div className="hover:bg-[#1b5472] duration-300 text-white p-3 rounded-2xl shadow-md transition cursor-pointer">
+      <FaArrowRight />
     </div>
   </div>
 );
@@ -24,8 +25,10 @@ const CustomNextArrow = ({ onClick }) => (
 const CSRNewsletter = () => {
   const [selectedYear, setSelectedYear] = useState('All');
   const [open, setOpen] = useState(false);
+  const [showPDF, setShowPDF] = useState(false);
+  const [selectedPdfUrl, setSelectedPdfUrl] = useState(null); // 👈 holds the selected PDF
 
-  const years = ['All', ...new Set(reportData.map((report) => report.year))];
+  const years = ['All', ...new Set(newsLetterData.map((report) => report.year))];
 
   const handleSelect = (year) => {
     setSelectedYear(year);
@@ -34,8 +37,8 @@ const CSRNewsletter = () => {
 
   const filteredReports =
     selectedYear === 'All'
-      ? reportData
-      : reportData.filter((report) => report.year === selectedYear);
+      ? newsLetterData
+      : newsLetterData.filter((report) => report.year === selectedYear);
 
   const handleShare = (title, link) => {
     const subject = encodeURIComponent(`Check out this report: ${title}`);
@@ -65,7 +68,7 @@ const CSRNewsletter = () => {
   };
 
   return (
-    <div className="text-white py-18 px-4 relative">
+    <div className="text-white py-16 px-4 relative">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <h2 className="text-3xl md:text-4xl font-light">CSR Newsletter</h2>
@@ -99,7 +102,7 @@ const CSRNewsletter = () => {
       {/* Slider */}
       <Slider {...settings}>
         {filteredReports.map((report, idx) => (
-          <div key={idx} className="px-3">
+          <div key={idx} className="px-3 py-18">
             <div className="flex bg-[#10314e] rounded-xl overflow-hidden shadow-lg h-full">
               {/* Image */}
               <div className="w-[40%] flex items-center justify-center p-2">
@@ -122,15 +125,16 @@ const CSRNewsletter = () => {
                   >
                     <FaDownload />
                   </a>
-                  <a
-                    href={report.pdfLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => {
+                      setSelectedPdfUrl(report.pdfLink);
+                      setShowPDF(true);
+                    }}
                     className="bg-[#22668a] p-2 rounded-md hover:bg-[#1b5472] transition"
                     title="Read"
                   >
                     <FaBookOpen />
-                  </a>
+                  </button>
                   <button
                     onClick={() => handleShare(report.title, report.pdfLink)}
                     className="bg-[#22668a] p-2 rounded-md hover:bg-[#1b5472] transition"
@@ -144,6 +148,14 @@ const CSRNewsletter = () => {
           </div>
         ))}
       </Slider>
+
+      {/* PDF Modal outside the map */}
+      {showPDF && selectedPdfUrl && (
+        <PDFModal pdfUrl={selectedPdfUrl} onClose={() => {
+          setShowPDF(false);
+          setSelectedPdfUrl(null);
+        }} />
+      )}
     </div>
   );
 };

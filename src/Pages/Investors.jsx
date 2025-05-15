@@ -9,6 +9,7 @@ import EventsSlider from '../Components/Investors/EventsSlider';
 import InvestorsUpdates from '../Components/Investors/InvestorsUpdates';
 import Governance from '../Components/Investors/Governance';
 import ResultsSection from '../Components/Investors/ResultsComponent';
+import ShareholderInfo from '../Components/Investors/ShareholderInfo';
 
 const Investors = () => {
     const subLinks = [
@@ -29,12 +30,12 @@ const Investors = () => {
             />
 
             <div className="container-wrapper">
-                <div className="max-w-[1350px] mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto mt-8">
                     <KeyValues title={"Q3FY25 - Key Figures"} theme1={"#096080"} theme2={"#03253E"} text={"#4ac9f6"} data={keyFiguresData} />
                 </div>
             </div>
             <div className="container-wrapper">
-                <div className="max-w-[1350px] mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-8">
                     <ResultsSection />
                 </div>
             </div>
@@ -58,18 +59,23 @@ const Investors = () => {
                 </div>
             </div>
             <div className="container-wrapper">
-                <div className="max-w-[1350px] mx-auto my-16">
+                <div className="max-w-[1350px] mx-auto my-8">
                     <EventsSlider />
                 </div>
                 <div className="max-w-[1350px] mx-auto my-16">
                     <InvestorsUpdates />
                 </div>
             </div>
-                {/* <div className=''> */}
-                    {/* <div className="max-w-[1350px] mx-auto my-16"> */}
-                        <Governance />
-                    {/* </div> */}
-                {/* </div> */}
+            {/* <div className=''> */}
+            {/* <div className="max-w-[1350px] mx-auto my-16"> */}
+            <Governance />
+            {/* </div> */}
+            {/* </div> */}
+            <div className='bg-[#03253E] border-b-4 border-[#49C8F5]'>
+                <div className="max-w-[1350px] mx-auto">
+                    <ShareholderInfo />
+                </div>
+            </div>
         </div>
     )
 }
