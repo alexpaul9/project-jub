@@ -1,8 +1,11 @@
 import React from 'react'
+import AnimationWrapper from '../Components/Global/AnimationWrapper'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <AnimationWrapper>
+      <div>Home</div>
+    </AnimationWrapper>
   )
 }
 

@@ -52,7 +52,7 @@ function DocModal({ open, onClose, title, bannerImage, documents = [] }) {
               href={doc.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#16263e] hover:bg-[#232e3f] p-3 transition-colors duration-200 rounded-xl text-white flex md:flex-row  md:items-center gap-2 shadow-lg
+              className="bg-[#16263e] hover:bg-[#232e3f] p-3 md:p-0 transition-colors duration-200 rounded-xl text-white flex md:flex-row  md:items-center gap-2 shadow-lg
                 flex-co items-start
               "
             >

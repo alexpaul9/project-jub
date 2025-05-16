@@ -6,6 +6,7 @@ import ImpactCard from '../Components/Global/ImpactCard';
 import Modal from "../Components/Modal";
 import { motion, AnimatePresence } from 'framer-motion';
 import CSRNewsletter from '../Components/csr/CSRNewsletter';
+import AnimationWrapper from '../Components/Global/AnimationWrapper';
 
 const CSR = () => {
 
@@ -51,7 +52,7 @@ const CSR = () => {
         { icon: './investors/reg-46.svg', label: "Investor's Contact", path: '/' },
     ];
     return (
-        <div>
+        <AnimationWrapper>
             <GlobalCover
                 title={"Corporate Social Responsibility"}
                 image="./csr/csr-banner.png"
@@ -106,7 +107,7 @@ const CSR = () => {
                                 <div className="text-left">
                                     <h3 className="text-2xl mb-2">Employee Volunteering</h3>
                                     <p className="text-[#7F7F8A] text-[12px] my-2">
-                                        Domino’s, India’s largest quick-service restaurant (QSR) chain,
+                                        Domino's, India's largest quick-service restaurant (QSR) chain,
                                         today announced the opening of its 2000th store in the country.
                                     </p>
                                     <motion.span
@@ -140,7 +141,7 @@ const CSR = () => {
                                 <div className="text-left">
                                     <h3 className="text-2xl mb-2">Awards & Accolades</h3>
                                     <p className="text-[#7F7F8A] text-[12px] my-2">
-                                        Domino’s, India’s largest quick-service restaurant (QSR) chain,
+                                        Domino's, India's largest quick-service restaurant (QSR) chain,
                                         today announced the opening of its 2000th store in the country.
                                     </p>
                                     <motion.span
@@ -221,7 +222,7 @@ const CSR = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </AnimationWrapper>
     )
 }
 

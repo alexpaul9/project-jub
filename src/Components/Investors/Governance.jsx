@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import PDFModal from "../Global/PDFModal";
 import DocModal from "../Global/DocModal";
-import policies from "../../data/Investors/policies";
+import policies from "../../data/Investors/governance/policies";
 
 const governanceCards = [
   {
@@ -86,7 +86,7 @@ export default function Governance() {
                 <button
                   key={i}
                   onClick={() => handleCardClick(card)}
-                  className="group relative rounded-2xl p-6 bg-[#eaf7fd] text-[#122241] transition-all duration-500 ease-in-out hover:bg-gradient-to-b hover:from-[#0b2641] hover:to-[#2180a8] hover:text-white text-left"
+                  className="group relative cursor-pointer rounded-2xl p-6 bg-[#eaf7fd] text-[#122241] transition-all duration-500 ease-in-out hover:bg-gradient-to-b hover:from-[#0b2641] hover:to-[#2180a8] hover:text-white text-left"
                 >
                   <div className="text-3xl mb-4 relative">
                     <div className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500">

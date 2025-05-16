@@ -8,23 +8,23 @@ const GlobalCover = ({ title, image, video, subNav, icon, theme, themeLine = [] 
   return (
     <div className="relative">
       {/* COVER */}
-      <div className="w-full relative overflow-hidden">
+      <div className="w-full h-[400px] relative overflow-hidden">
         {/* Background Media */}
         {video ? (
           <video
             src={video}
             autoPlay
             loop
-            muted
+            muted    
             playsInline
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover object-center"
           />
         ) : (
           image && (
             <img
               src={image}
               alt="cover"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           )
         )}

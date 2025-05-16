@@ -36,29 +36,29 @@ function App() {
   return (
     <Router>
       <Layout>
-          <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
-            <Route path="/" element={<Aboutus />} />
-            <Route path="/about-us" element={<Aboutus />} />
-            <Route path="/governance" element={<Aboutus />} />
-            <Route path="/leadership" element={<Leadership />} />
-            <Route path="/brands" element={<Brands />} />
-            <Route path="/dominos" element={<Dominos />} />
-            <Route path="/coffy" element={<Aboutus />} />
-            <Route path="/popeyes" element={<Popeyes />} />
-            <Route path="/dunkin" element={<Dunkin />} />
-            <Route path="/hongs-kitchen" element={<Hongs />} />
-            <Route path="/franchise-info" element={<FranchiseInfo />} />
-            <Route path="/immersive-food-experience" element={<IFE />} />
-            <Route path="/strategy" element={<Strategy />} />
-            <Route path="/sustainability" element={<Sustainability />} />
-            <Route path="/investors" element={<Investors />} />
-            <Route path="/career" element={<Career />} />
-            {/* <Route path="/career-growth-and-development" element={<CGD />} /> */}
-            <Route path="/csr" element={<CSR />} />
-            <Route path="/newsroom" element={<Newsroom />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+        <Routes>
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Aboutus />} />
+          <Route path="/about-us" element={<Aboutus />} />
+          <Route path="/governance" element={<Aboutus />} />
+          <Route path="/leadership" element={<Leadership />} />
+          <Route path="/brands" element={<Brands />} />
+          <Route path="/dominos" element={<Dominos />} />
+          <Route path="/coffy" element={<Aboutus />} />
+          <Route path="/popeyes" element={<Popeyes />} />
+          <Route path="/dunkin" element={<Dunkin />} />
+          <Route path="/hongs-kitchen" element={<Hongs />} />
+          <Route path="/franchise-info" element={<FranchiseInfo />} />
+          <Route path="/immersive-food-experience" element={<IFE />} />
+          <Route path="/strategy" element={<Strategy />} />
+          <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/investors" element={<Investors />} />
+          <Route path="/career" element={<Career />} />
+          {/* <Route path="/career-growth-and-development" element={<CGD />} /> */}
+          <Route path="/csr" element={<CSR />} />
+          <Route path="/newsroom" element={<Newsroom />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </Layout>
     </Router>
   );

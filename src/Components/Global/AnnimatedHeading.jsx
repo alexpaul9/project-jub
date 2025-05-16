@@ -1,72 +1,131 @@
-import React, { useRef, useEffect } from 'react';
-import gsap from 'gsap';
-
-function splitTextToSpans(text) {
-    return text.split('').map((char, i) => (
-        <span
-            key={i}
-            style={{
-                display: 'inline-block',
-                opacity: 0,
-                transform: 'translateY(30px) scale(0.8) rotate(4deg)',
-                filter: 'blur(4px)',
-                willChange: 'opacity, transform, filter'
-            }}
-            className="gsap-anim-char"
-        >
-            {char === ' ' ? '\u00A0' : char}
-        </span>
-    ));
-}
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const AnimatedHeading = ({
     tag = 'h2',
     text,
-    duration = 1,
-    stagger = 0.05,
     className = '',
     ...rest
 }) => {
-    const headingRef = useRef(null);
     const Tag = tag;
+    
+    // Split text into characters
+    const characters = text.split('');
 
-    useEffect(() => {
-        const node = headingRef.current;
-        if (!node) return;
+    const container = {
+        hidden: { 
+            opacity: 1,
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.06,
+                delayChildren: 0.3,
+                ease: "easeOut"
+            }
+        }
+    };
 
-        const chars = node.querySelectorAll('.gsap-anim-char');
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    gsap.to(chars, {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        rotate: 0,
-                        filter: 'blur(0px)',
-                        duration,
-                        stagger,
-                        ease: 'power4.out',
-                    });
-                    observer.disconnect();
+    const letterAnimation = {
+        hidden: {
+            opacity: 0,
+            y: 100,
+            rotate: Math.random() * 180 - 90,
+            scale: 4,
+            filter: "blur(30px) brightness(3)",
+            textShadow: "0 0 30px #00ff00, 0 0 50px #00ff00, 0 0 70px #00ff00",
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            rotate: 0,
+            scale: 1,
+            filter: "blur(0px) brightness(1)",
+            textShadow: "0 0 0px transparent",
+            transition: {
+                duration: 1.8,
+                ease: [0.2, 0.8, 0.2, 1],
+                opacity: { duration: 2 },
+                scale: { duration: 1.8 },
+                rotate: { duration: 1.5 },
+                y: { 
+                    type: "spring",
+                    damping: 12,
+                    stiffness: 50,
+                    duration: 1.8
                 }
-            },
-            { threshold: 0.4 }
-        );
-        observer.observe(node);
+            }
+        }
+    };
 
-        return () => observer.disconnect();
-    }, [duration, stagger]);
+    const glowEffect = {
+        hidden: {
+            opacity: 0,
+        },
+        visible: {
+            opacity: [0, 0.5, 0],
+            transition: {
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+            }
+        }
+    };
 
     return (
-        <Tag
-            ref={headingRef}
-            className={className}
-            style={{ display: 'inline-block', overflow: 'hidden' }}
-            {...rest}
-        >
-            {splitTextToSpans(text)}
+        <Tag className={className} {...rest}>
+            <motion.div
+                variants={container}
+                initial="hidden"
+                animate="visible"
+                style={{ 
+                    display: 'inline-block',
+                    position: 'relative',
+                    overflow: 'visible',
+                    willChange: 'transform'
+                }}
+            >
+                {characters.map((char, index) => (
+                    <motion.span
+                        key={index}
+                        variants={letterAnimation}
+                        style={{ 
+                            display: 'inline-block',
+                            position: 'relative',
+                            whiteSpace: 'pre',
+                            WebkitFontSmoothing: 'antialiased',
+                            willChange: 'transform, opacity, filter'
+                        }}
+                    >
+                        {/* Glowing background effect */}
+                        <motion.span
+                            variants={glowEffect}
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                background: 'radial-gradient(circle at center, rgba(0,255,0,0.3) 0%, transparent 80%)',
+                                filter: 'blur(8px)',
+                                transform: 'scale(2)',
+                                pointerEvents: 'none',
+                                willChange: 'opacity, transform'
+                            }}
+                        />
+
+                        {/* Main character */}
+                        <span style={{ 
+                            position: 'relative', 
+                            zIndex: 1,
+                            mixBlendMode: 'screen'
+                        }}>
+                            {char === ' ' ? '\u00A0' : char}
+                        </span>
+                    </motion.span>
+                ))}
+            </motion.div>
         </Tag>
     );
 };

@@ -4,12 +4,16 @@
     @apply px-4 sm:px-6 lg:px-8 mx-auto;
     max-width: 1700px; /* or any value you prefer */
   }
-  
-  
 }
+
 html {
   font-family: 'Manrope', sans-serif;
 }
+
+body {
+  overflow-y: scroll;
+}
+
 .manrope-thin {
   font-family: 'Manrope', sans-serif;
   font-weight: 100;
@@ -23,4 +27,14 @@ html {
 .manrope-bold {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
+}
+
+/* React-scroll custom styles */
+.scroll-to-element {
+  cursor: pointer;
+}
+
+/* Smooth scrolling for all elements */
+* {
+  scroll-margin-top: 0;
 }

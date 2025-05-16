@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GlobalCover from '../Components/GlobalCover';
+import AnimationWrapper from '../Components/Global/AnimationWrapper';
 
 const Brands = () => {
     const navigate = useNavigate();
@@ -21,9 +22,15 @@ const Brands = () => {
     }, [navigate]);
 
     return (
-        <div>
-          
-        </div>
+        <AnimationWrapper>
+            <GlobalCover
+                title="Our Brands"
+                image="./brands/brands-banner.png"
+                subNav={subLinks}
+                theme={"#03253E"}
+                themeLine={"#49C8F5"}
+            />
+        </AnimationWrapper>
     );
 };
 

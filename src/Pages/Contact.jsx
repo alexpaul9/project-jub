@@ -1,5 +1,6 @@
 import React from 'react';
 import GlobalCover from '../Components/GlobalCover';
+import AnimationWrapper from '../Components/Global/AnimationWrapper';
 
 const brands = [
     {
@@ -39,7 +40,7 @@ export default function Contact() {
         { icon: './investors/reg-46.svg', label: "Investor's Contact", path: '/' },
     ];
     return (
-        <div>
+        <AnimationWrapper>
             <GlobalCover
                 title={"Contact Us"}
                 video="./Website Final Videos/Contact/Contact_Banner.webm"
@@ -47,6 +48,7 @@ export default function Contact() {
                 theme={"#03253E"}
                 themeLine={"#49C8F5"}
             />
+            
             <div className="container-wrapper">
                 <div className="max-w-[1350px] mx-auto my-16">
                     <div className="space-y-12">
@@ -122,9 +124,8 @@ export default function Contact() {
                         {/* Brand Cards */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {brands.map((brand, idx) => (
-                                <div className='bg-[#49C8F5] pb-2 rounded-3xl'>
+                                <div key={idx} className='bg-[#49C8F5] pb-2 rounded-3xl'>
                                     <div
-                                        key={idx}
                                         className="bg-[#001c38] text-white p-4 rounded-3xl shadow-md flex flex-col justify-between"
                                     >
                                         <img src={brand.name} className='w-44 h-20 mb-4' alt="" />
@@ -145,6 +146,6 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-        </div>
+        </AnimationWrapper>
     );
 }
